@@ -119,32 +119,34 @@ Initiates the creation of a new profile by scraping a provided URL. The backend 
         400 Bad Request: { "error": "Portfolio URL is required." }
         500 Internal Server Error: { "error": "Failed to process portfolio." }
 
-2. Get Profile by ID
+#### 2. Get Profile by ID
 
 Retrieves a single, complete profile object. This endpoint should be publicly accessible.
 
-    Endpoint: GET /api/profiles/{profileId}
-    Request Format:
+-  **Endpoint:** GET /api/profiles/{profileId}
+-  **Request Format:**
+   ```json
         URL parameter profileId is required.
-    Success Response Format (200 OK):
-
-    {
-      "profileId": "a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
-      "userId": "user-abc-123",
-      "firstName": "Jane",
-      "lastName": "Doe",
-      // ... all other fields from the Profile model
-    }
-
-    Error Response Format:
+        Success Response Format (200 OK):
+    
+        {
+          "profileId": "a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
+          "userId": "user-abc-123",
+          "firstName": "Jane",
+          "lastName": "Doe",
+          // ... all other fields from the Profile model
+        }
+    
+        Error Response Format:
         404 Not Found: { "error": "Profile not found." }
 
-3. Update Profile
+#### 3. Update Profile
 
 Updates an existing profile. This should be an authenticated endpoint. On the first successful update, the status should be changed to "published".
 
-    Endpoint: PUT /api/profiles/{profileId}
-    Request Body Format:
+-   **Endpoint:** PUT /api/profiles/{profileId}
+-   **Request Body Format:**
+    ```json
         A partial Profile object containing only the fields to be updated. The frontend will send the entire ProfileData section (firstName, lastName, summary, experiences).
 
     {
