@@ -73,6 +73,7 @@ The primary data object representing a user's profile.
 | `summary`             | `string`   | A personal bio or summary text. |
 | `experiences`         | `array`    | An array of `Experience` objects.                                           |
 | `status`              | `string`   | The profile's state. Enum: `"pending_review"`, `"published"`. |
+| `process`              | `string`   | The profile's state. Enum: `"fail"`, `"success"`. |
 | `createdAt`           | `datetime` | ISO 8601 timestamp for creation. |
 | `updatedAt`           | `datetime` | ISO 8601 timestamp for the last update.                                      |
 
