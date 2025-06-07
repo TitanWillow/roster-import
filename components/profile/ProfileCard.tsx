@@ -39,7 +39,7 @@ export const ProfileCard: React.FC<{ profile: RosterProfile }> = ({ profile }) =
 
             <div className="flex flex-col sm:flex-row justify-between items-start pb-8 border-b border-gray-700">
                 <div>
-                    <h1 className="text-2xl font-bold text-white tracking-tight">{profile.firstName} {profile.lastName}</h1>
+                    <h1 className="text-4xl font-bold text-white tracking-tight">{profile.firstName} {profile.lastName}</h1>
                     <p className="mt-2 text-xl text-orange-400 font-medium">Creative Professional</p>
                 </div>
                 <div className="mt-4 sm:mt-0 flex-shrink-0">
