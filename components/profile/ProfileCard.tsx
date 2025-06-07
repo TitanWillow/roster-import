@@ -39,8 +39,8 @@ export const ProfileCard: React.FC<{ profile: RosterProfile }> = ({ profile }) =
 
             <div className="flex flex-col sm:flex-row justify-between items-start pb-8 border-b border-gray-700">
                 <div>
-                    <h1 className="text-5xl font-bold text-white tracking-tight">{profile.firstName} {profile.lastName}</h1>
-                    <p className="mt-2 text-3xl text-orange-400 font-medium">Creative Professional</p>
+                    <h1 className="text-2xl font-bold text-white tracking-tight">{profile.firstName} {profile.lastName}</h1>
+                    <p className="mt-2 text-xl text-orange-400 font-medium">Creative Professional</p>
                 </div>
                 <div className="mt-4 sm:mt-0 flex-shrink-0">
                     <button onClick={handleCopyLink} className="flex items-center text-sm bg-gray-700 hover:bg-gray-600 text-gray-200 font-medium py-2 px-4 rounded-full shadow-sm transition-colors cursor-pointer">
@@ -52,28 +52,28 @@ export const ProfileCard: React.FC<{ profile: RosterProfile }> = ({ profile }) =
             </div>
             
             <section>
-                <h2 className="text-xl uppercase font-bold tracking-widest text-blue-500 mb-4">About</h2>
-                <div className="text-gray-300 text-xl leading-relaxed whitespace-pre-line prose prose-invert prose-p:text-gray-300 max-w-none">
+                <h2 className="text-lg uppercase font-bold tracking-widest text-blue-500 mb-4">About</h2>
+                <div className="text-gray-300 text-base leading-relaxed whitespace-pre-line prose prose-invert prose-p:text-gray-300 max-w-none">
                     {profile.summary || "No summary provided."}
                 </div>
             </section>
             
             <section>
-                <h2 className="text-xl uppercase font-bold tracking-widest text-blue-500 mb-8">Experience</h2>
+                <h2 className="text-lg uppercase font-bold tracking-widest text-blue-500 mb-8">Experience</h2>
                 <div className="space-y-12">
                     {profile.experiences && profile.experiences.length > 0 ? (
                         profile.experiences.map((exp) => (
                             <div key={exp.id} className="pl-4 border-l-4 border-gray-700">
-                                <h3 className="text-2xl font-bold text-green-400">{exp.jobTitle}</h3>
-                                <p className="text-xl text-gray-300 font-medium mt-1">{exp.employerOrClient}</p>
-                                <p className="text-lg text-gray-400 font-semibold mt-2">
+                                <h3 className="text-xl font-bold text-green-400">{exp.jobTitle}</h3>
+                                <p className="text-lg text-gray-300 font-medium mt-1">{exp.employerOrClient}</p>
+                                <p className="text-base text-gray-400 font-semibold mt-2">
                                     {formatDate(exp.startDate)} - {exp.endDate ? formatDate(exp.endDate) : 'Present'}
                                     <span className="mx-2 text-gray-600">|</span>
                                     <span className="capitalize">{exp.employmentType}</span>
                                 </p>
                                 
                                 {exp.contributionSummary && (
-                                    <div className="mt-4 text-lg text-gray-400 leading-relaxed whitespace-pre-line prose prose-invert prose-p:text-gray-400 max-w-none">
+                                    <div className="mt-4 text-base text-gray-400 leading-relaxed whitespace-pre-line prose prose-invert prose-p:text-gray-400 max-w-none">
                                         {exp.contributionSummary}
                                     </div>
                                 )}
