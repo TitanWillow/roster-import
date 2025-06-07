@@ -1,3 +1,34 @@
+### Installation & Setup
+
+1.  **Clone the Repository**
+    Open your terminal, navigate to where you want to store the project, and clone the repository.
+    ```bash
+    git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git]
+    ```
+
+2.  **Navigate to the Project Directory**
+    ```bash
+    cd YOUR_REPO_NAME
+    ```
+
+3.  **Install Dependencies**
+    This command will read the `package.json` file and install all the necessary packages for the project, including Next.js, React, Tailwind CSS, and `uuid`.
+    ```bash
+    npm install
+    ```
+
+4.  **Run the Development Server**
+    Once the installation is complete, run the following command to start the application.
+    ```bash
+    npm run dev
+    ```
+
+5.  **Open the Application**
+    The application should now be running. Open your favorite web browser and navigate to:
+    [http://localhost:3000](http://localhost:3000)
+
+You should see the "Import Your Portfolio" landing page, ready to use!
+
 ## Demo Walkthrough: Roster Profile Importer
 
 This document provides a technical explanation of the Roster Profile Importer project, covering user flow, architecture, state management and future considerations.
