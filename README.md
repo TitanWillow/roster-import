@@ -109,15 +109,15 @@ Initiates the creation of a new profile by scraping a provided URL. The backend 
 
 - **Endpoint:** `POST /api/profiles`
 - **Request Body Format:**
-  ```json
-  {
-    "portfolioUrl": "[https://example-portfolio.com](https://example-portfolio.com)"
-  }
-  Success Response Format (201 Created):
-
-    Error Response Format:
-        400 Bad Request: { "error": "Portfolio URL is required." }
-        500 Internal Server Error: { "error": "Failed to process portfolio." }
+ 
+      {
+        "portfolioUrl": "https://example-portfolio.com"
+      }
+      Success Response Format (201 Created):
+    
+        Error Response Format:
+            400 Bad Request: { "error": "Portfolio URL is required." }
+            500 Internal Server Error: { "error": "Failed to process portfolio." }
 
 #### 2. Get Profile by ID
 
@@ -125,7 +125,7 @@ Retrieves a single, complete profile object. This endpoint should be publicly ac
 
 -  **Endpoint:** GET /api/profiles/{profileId}
 -  **Request Format:**
-   ```json
+   
         URL parameter profileId is required.
         Success Response Format (200 OK):
     
@@ -146,25 +146,25 @@ Updates an existing profile. This should be an authenticated endpoint. On the fi
 
 -   **Endpoint:** PUT /api/profiles/{profileId}
 -   **Request Body Format:**
-    ```json
+    
         A partial Profile object containing only the fields to be updated. The frontend will send the entire ProfileData section (firstName, lastName, summary, experiences).
-
-    {
-      "firstName": "Jane Updated",
-      "lastName": "Doe",
-      "summary": "An updated summary...",
-      "experiences": [ /* full, updated array of experiences */ ]
-    }
-  
-    Success Response Format (200 OK):
-  
-      {
-        "message": "Profile updated successfully."
-      }
-  
-      Error Response Format:
-          403 Forbidden: { "error": "User does not have permission to edit this profile." }
-          404 Not Found: { "error": "Profile not found." }
-          422 Unprocessable Entity: If validation fails (e.g., required fields are empty). { "errors": { "firstName": "First name is required." } }
+    
+        {
+          "firstName": "Jane Updated",
+          "lastName": "Doe",
+          "summary": "An updated summary...",
+          "experiences": [ /* full, updated array of experiences */ ]
+        }
+      
+        Success Response Format (200 OK):
+      
+          {
+            "message": "Profile updated successfully."
+          }
+      
+          Error Response Format:
+              403 Forbidden: { "error": "User does not have permission to edit this profile." }
+              404 Not Found: { "error": "Profile not found." }
+              422 Unprocessable Entity: If validation fails (e.g., required fields are empty). { "errors": { "firstName": "First name is required." } }
 
 
